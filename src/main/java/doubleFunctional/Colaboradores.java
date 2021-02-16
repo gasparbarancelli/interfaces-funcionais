@@ -4,22 +4,10 @@ import java.util.function.DoubleFunction;
 
 public enum Colaboradores {
 
-    ASSISTENTE_PROSPECCAO(precoVenda -> {
-        if (precoVenda <= 100) {
-            return 1D;
-        }
-        return precoVenda / 50;
-    }),
+    DIRETOR(new CalculoComissaoDiretor()),
+    ASSISTENTE_PROSPECCAO(new CalculoComissaoAssistenteProspeccao()),
     VENDEDOR(precoVenda -> precoVenda * 0.1),
-    GERENTE(precoVenda -> precoVenda * 0.09),
-    DIRETOR(precoVenda -> {
-        if (precoVenda <= 100) {
-            return 5D;
-        } else if (precoVenda <= 1_000) {
-            return precoVenda / 30;
-        }
-        return precoVenda / 25;
-    });
+    GERENTE(precoVenda -> precoVenda * 0.09);
 
     private final DoubleFunction<Double> calculoComissao;
 
@@ -30,4 +18,5 @@ public enum Colaboradores {
     public DoubleFunction<Double> getCalculoComissao() {
         return calculoComissao;
     }
+
 }
