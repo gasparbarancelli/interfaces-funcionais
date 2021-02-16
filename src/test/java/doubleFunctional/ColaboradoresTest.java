@@ -3,8 +3,18 @@ package doubleFunctional;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ColaboradoresTest {
+
+    @Test
+    void todosColaboradoresDevemGanharUmValorDeComissao() {
+        double valorVenda = 1_895;
+        for (Colaboradores colaborador : Colaboradores.values()) {
+            Double valorComissao = colaborador.getCalculoComissao().apply(valorVenda);
+            assertTrue(valorComissao > 0);
+        }
+    }
 
     @Test
     void valorComissaoAssistenteProspeccao() {
