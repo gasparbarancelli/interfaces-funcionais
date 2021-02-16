@@ -1,4 +1,4 @@
-package function;
+package doubleFunctional;
 
 import org.junit.jupiter.api.Test;
 

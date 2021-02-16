@@ -1,6 +1,6 @@
-package function;
+package doubleFunctional;
 
-import java.util.function.Function;
+import java.util.function.DoubleFunction;
 
 public enum Colaboradores {
 
@@ -21,13 +21,13 @@ public enum Colaboradores {
         return precoVenda / 25;
     });
 
-    private final Function<Double, Double> calculoComissao;
+    private final DoubleFunction<Double> calculoComissao;
 
-    Colaboradores(Function<Double, Double> calculoComissao) {
+    Colaboradores(DoubleFunction<Double> calculoComissao) {
         this.calculoComissao = calculoComissao;
     }
 
-    public Function<Double, Double> getCalculoComissao() {
+    public DoubleFunction<Double> getCalculoComissao() {
         return calculoComissao;
     }
 }
