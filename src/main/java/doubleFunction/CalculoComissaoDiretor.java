@@ -1,4 +1,4 @@
-package doubleFunctional;
+package doubleFunction;
 
 import java.util.function.DoubleFunction;
 
