@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class DoubleFunctionDemoTest {
+class ColaboradoresTest {
 
     @Test
     void todosColaboradoresDevemGanharUmValorDeComissao() {
         double valorVenda = 1_895;
-        for (DoubleFunctionDemo colaborador : DoubleFunctionDemo.values()) {
+        for (Colaboradores colaborador : Colaboradores.values()) {
             Double valorComissao = colaborador.getCalculoComissao().apply(valorVenda);
             assertTrue(valorComissao > 0);
         }
@@ -18,7 +18,7 @@ class DoubleFunctionDemoTest {
 
     @Test
     void valorComissaoAssistenteProspeccao() {
-        DoubleFunctionDemo assistenteProspeccao = DoubleFunctionDemo.ASSISTENTE_PROSPECCAO;
+        Colaboradores assistenteProspeccao = Colaboradores.ASSISTENTE_PROSPECCAO;
         Double valorAssistenteProspeccao = assistenteProspeccao.getCalculoComissao().apply(100D);
         assertEquals(1, valorAssistenteProspeccao);
 
@@ -31,7 +31,7 @@ class DoubleFunctionDemoTest {
 
     @Test
     void valorComissaoVendedor() {
-        DoubleFunctionDemo vendedor = DoubleFunctionDemo.VENDEDOR;
+        Colaboradores vendedor = Colaboradores.VENDEDOR;
         Double valorComissaoVendedor = vendedor.getCalculoComissao().apply(100D);
         assertEquals(10, valorComissaoVendedor);
 
@@ -41,7 +41,7 @@ class DoubleFunctionDemoTest {
 
     @Test
     void valorComissaoGerente() {
-        DoubleFunctionDemo gerente = DoubleFunctionDemo.GERENTE;
+        Colaboradores gerente = Colaboradores.GERENTE;
         Double valorComissaoGerente = gerente.getCalculoComissao().apply(100D);
         assertEquals(9, valorComissaoGerente);
 
@@ -51,7 +51,7 @@ class DoubleFunctionDemoTest {
 
     @Test
     void valorComissaoDiretor() {
-        DoubleFunctionDemo diretor = DoubleFunctionDemo.DIRETOR;
+        Colaboradores diretor = Colaboradores.DIRETOR;
         Double valorComissaoDiretor = diretor.getCalculoComissao().apply(100D);
         assertEquals(5, valorComissaoDiretor);
 

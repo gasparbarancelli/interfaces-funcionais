@@ -2,7 +2,7 @@ package doubleFunction;
 
 import java.util.function.DoubleFunction;
 
-public enum DoubleFunctionDemo {
+public enum Colaboradores {
 
     DIRETOR(new CalculoComissaoDiretor()),
     ASSISTENTE_PROSPECCAO(new CalculoComissaoAssistenteProspeccao()),
@@ -11,7 +11,7 @@ public enum DoubleFunctionDemo {
 
     private final DoubleFunction<Double> calculoComissao;
 
-    DoubleFunctionDemo(DoubleFunction<Double> calculoComissao) {
+    Colaboradores(DoubleFunction<Double> calculoComissao) {
         this.calculoComissao = calculoComissao;
     }
 
