@@ -8,8 +8,8 @@ public class CalculoComissaoDiretor implements DoubleFunction<Double> {
         if (precoVenda <= 100) {
             return 5D;
         } else if (precoVenda <= 1_000) {
-            return precoVenda / 30;
+            return (double) ((int) precoVenda / 30);
         }
-        return precoVenda / 25;
+        return (double) ((int) precoVenda / 25);
     }
 }

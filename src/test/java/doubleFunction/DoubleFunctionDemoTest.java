@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class ColaboradoresTest {
+class DoubleFunctionDemoTest {
 
     @Test
     void todosColaboradoresDevemGanharUmValorDeComissao() {
         double valorVenda = 1_895;
-        for (Colaboradores colaborador : Colaboradores.values()) {
+        for (DoubleFunctionDemo colaborador : DoubleFunctionDemo.values()) {
             Double valorComissao = colaborador.getCalculoComissao().apply(valorVenda);
             assertTrue(valorComissao > 0);
         }
@@ -18,7 +18,7 @@ class ColaboradoresTest {
 
     @Test
     void valorComissaoAssistenteProspeccao() {
-        Colaboradores assistenteProspeccao = Colaboradores.ASSISTENTE_PROSPECCAO;
+        DoubleFunctionDemo assistenteProspeccao = DoubleFunctionDemo.ASSISTENTE_PROSPECCAO;
         Double valorAssistenteProspeccao = assistenteProspeccao.getCalculoComissao().apply(100D);
         assertEquals(1, valorAssistenteProspeccao);
 
@@ -26,12 +26,12 @@ class ColaboradoresTest {
         assertEquals(24, valorAssistenteProspeccao);
 
         valorAssistenteProspeccao = assistenteProspeccao.getCalculoComissao().apply(12_345D);
-        assertEquals(246.9, valorAssistenteProspeccao);
+        assertEquals(246, valorAssistenteProspeccao);
     }
 
     @Test
     void valorComissaoVendedor() {
-        Colaboradores vendedor = Colaboradores.VENDEDOR;
+        DoubleFunctionDemo vendedor = DoubleFunctionDemo.VENDEDOR;
         Double valorComissaoVendedor = vendedor.getCalculoComissao().apply(100D);
         assertEquals(10, valorComissaoVendedor);
 
@@ -41,7 +41,7 @@ class ColaboradoresTest {
 
     @Test
     void valorComissaoGerente() {
-        Colaboradores gerente = Colaboradores.GERENTE;
+        DoubleFunctionDemo gerente = DoubleFunctionDemo.GERENTE;
         Double valorComissaoGerente = gerente.getCalculoComissao().apply(100D);
         assertEquals(9, valorComissaoGerente);
 
@@ -51,15 +51,15 @@ class ColaboradoresTest {
 
     @Test
     void valorComissaoDiretor() {
-        Colaboradores diretor = Colaboradores.DIRETOR;
+        DoubleFunctionDemo diretor = DoubleFunctionDemo.DIRETOR;
         Double valorComissaoDiretor = diretor.getCalculoComissao().apply(100D);
         assertEquals(5, valorComissaoDiretor);
 
         valorComissaoDiretor = diretor.getCalculoComissao().apply(999D);
-        assertEquals(33.3, valorComissaoDiretor);
+        assertEquals(33, valorComissaoDiretor);
 
         valorComissaoDiretor = diretor.getCalculoComissao().apply(5_729D);
-        assertEquals(229.16, valorComissaoDiretor);
+        assertEquals(229, valorComissaoDiretor);
     }
 
 }

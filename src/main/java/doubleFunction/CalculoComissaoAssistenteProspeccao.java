@@ -8,6 +8,6 @@ public class CalculoComissaoAssistenteProspeccao implements DoubleFunction<Doubl
         if (precoVenda <= 100) {
             return 1D;
         }
-        return precoVenda / 50;
+        return (double) ((int) precoVenda / 50);
     }
 }
